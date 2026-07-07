@@ -1,6 +1,7 @@
 'use client'
 import { useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Wifi, Clock, Award, Star } from 'lucide-react'
 
 const CURSOS_ONLINE_URL = 'https://nails-visage-cursos.vercel.app/'
@@ -18,11 +19,11 @@ function useReveal() {
 
 const cursosOnline = [
   {
-    name: 'Esmaltado Semipermanente y Nivelación',
+    name: 'Manicurista Starter Pro: Fundamentos, Nivelación, Esmaltado y Diseños',
     slug: 'esmaltado-semipermanente-nivelacion',
     desc: 'Un solo curso que incluye las dos técnicas: esmaltado semipermanente desde cero y nivelación. Preparación, aplicación, durabilidad y corrección profesional.',
     badge: 'Disponible ahora',
-    includes: ['Esmaltado Semipermanente', 'Nivelación', 'Videos HD paso a paso', 'Material descargable', 'Certificado digital', 'Acceso inmediato por 6 meses'],
+    includes: ['Fundamentos teóricos y anatómicos de la manicure', 'Esmaltado Semipermanente', 'Nivelación', 'Diseños en tendencia', 'Videos HD paso a paso', 'Material descargable', 'Certificado digital', 'Acceso inmediato por 6 meses'],
   },
 ]
 
@@ -97,9 +98,15 @@ export default function CursosOnlinePage() {
                   </span>
                 </div>
 
-                {/* Icono decorativo */}
-                <div style={{ width: '100%', height: 140, background: 'linear-gradient(135deg, rgba(239,129,174,0.08) 0%, rgba(239,129,174,0.03) 100%)', borderRadius: '0.75rem', border: '1px solid var(--border-rosa)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Wifi size={40} style={{ color: 'var(--rosa)', opacity: 0.6 }} />
+                {/* Banner del curso */}
+                <div style={{ width: '55%', maxWidth: 220, aspectRatio: '2752 / 1536', position: 'relative', margin: '0 auto 1.5rem', borderRadius: '0.6rem', overflow: 'hidden', border: '1px solid var(--border-rosa)' }}>
+                  <Image
+                    src="/images/banner-curso-online.png"
+                    alt={c.name}
+                    fill
+                    style={{ objectFit: 'contain' }}
+                    sizes="220px"
+                  />
                 </div>
 
                 <div style={{ fontFamily: "'Work Sans', sans-serif", fontWeight: 800, fontSize: '1.15rem', marginBottom: '0.75rem' }}>{c.name}</div>

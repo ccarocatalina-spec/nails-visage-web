@@ -20,6 +20,7 @@ export const COURSES: Course[] = [
       { title: 'Soft gel', bullets: ['Preparación de las uñas', 'Aplicación de tips', 'Correcto limado', 'Esmaltado, francesa y degradé', 'Encapsulado y cristalería'] },
     ],
     active: true,
+    image_url: '/images/cursos/manicure-profesional.png',
     created_at: '2024-01-01',
   },
   {
@@ -39,6 +40,7 @@ export const COURSES: Course[] = [
       { title: 'Acrílico', bullets: ['Preparación de las uñas', 'Postura de moldes', 'Manejo y aplicación', 'Correcto limado', 'Encapsulado y baby boomer', 'Técnica reversa y flores 3D', 'Cristalería'] },
     ],
     active: true,
+    image_url: '/images/cursos/manicure-integral.png',
     created_at: '2024-01-01',
   },
   {
@@ -58,6 +60,7 @@ export const COURSES: Course[] = [
       { title: 'Soft gel', bullets: ['Preparación de las uñas', 'Aplicación de tips', 'Correcto limado', 'Esmaltado, francesa y degradé', 'Encapsulado y cristalería'] },
     ],
     active: true,
+    image_url: '/images/cursos/manicure-esencial.png',
     created_at: '2024-01-01',
   },
   {
@@ -76,6 +79,7 @@ export const COURSES: Course[] = [
       { title: 'Esmaltado Semipermanente', bullets: ['Preparación de las uñas', 'Nivelación y esmaltado', 'Degradé, francesa y encapsulado', 'Ojo de gato y efectos magnéticos'] },
     ],
     active: true,
+    image_url: '/images/cursos/esmaltado-permanente-acrilico.png',
     created_at: '2024-01-01',
   },
   {
@@ -94,6 +98,7 @@ export const COURSES: Course[] = [
       { title: 'Esmaltado Semipermanente', bullets: ['Preparación de las uñas', 'Nivelación y esmaltado', 'Degradé, francesa y encapsulado', 'Ojo de gato y efectos magnéticos'] },
     ],
     active: true,
+    image_url: '/images/cursos/esmaltado-permanente-polygel.png',
     created_at: '2024-01-01',
   },
   {
@@ -112,6 +117,7 @@ export const COURSES: Course[] = [
       { title: 'Esmaltado Semipermanente', bullets: ['Preparación de las uñas', 'Nivelación y esmaltado', 'Degradé, francesa y encapsulado', 'Ojo de gato y efectos magnéticos'] },
     ],
     active: true,
+    image_url: '/images/cursos/esmaltado-permanente-soft-gel.png',
     created_at: '2024-01-01',
   },
   {
@@ -129,6 +135,7 @@ export const COURSES: Course[] = [
       { title: 'Soft gel', bullets: ['Preparación de las uñas', 'Aplicación de tips', 'Correcto limado', 'Esmaltado, francesa y degradé', 'Encapsulado y cristalería'] },
     ],
     active: true,
+    image_url: '/images/cursos/soft-gel-inicial.png',
     created_at: '2024-01-01',
   },
   {
@@ -146,6 +153,7 @@ export const COURSES: Course[] = [
       { title: 'Acrílico', bullets: ['Preparación de las uñas', 'Postura de moldes', 'Manejo y aplicación', 'Correcto limado', 'Encapsulado y baby boomer', 'Técnica reversa y flores 3D', 'Cristalería'] },
     ],
     active: true,
+    image_url: '/images/cursos/acrilico-inicial.png',
     created_at: '2024-01-01',
   },
   {
@@ -163,6 +171,7 @@ export const COURSES: Course[] = [
       { title: 'Polygel', bullets: ['Preparación de las uñas', 'Postura de moldes', 'Manejo y aplicación', 'Correcto limado', 'Encapsulado y baby boomer', 'Cristalería'] },
     ],
     active: true,
+    image_url: '/images/cursos/polygel-inicial.png',
     created_at: '2024-01-01',
   },
 
@@ -186,6 +195,7 @@ export const COURSES: Course[] = [
     ],
     notes: 'Práctica full en modelos reales',
     active: true,
+    image_url: '/images/cursos/integral-pestanas-cejas.png',
     created_at: '2024-01-01',
   },
   {
@@ -206,6 +216,7 @@ export const COURSES: Course[] = [
     ],
     notes: 'Práctica full en modelos reales',
     active: true,
+    image_url: '/images/cursos/extension-cejas.png',
     created_at: '2024-01-01',
   },
   {
@@ -226,6 +237,7 @@ export const COURSES: Course[] = [
     ],
     notes: 'Práctica full en modelos reales',
     active: true,
+    image_url: '/images/cursos/extension-lifting-coreana.png',
     created_at: '2024-01-01',
   },
   {
@@ -246,6 +258,7 @@ export const COURSES: Course[] = [
     ],
     notes: 'Práctica full en modelos reales y maniquí',
     active: true,
+    image_url: '/images/cursos/extension-pestanas.png',
     created_at: '2024-01-01',
   },
   {
@@ -266,6 +279,7 @@ export const COURSES: Course[] = [
     ],
     notes: 'Práctica full en modelos reales y maniquí',
     active: true,
+    image_url: '/images/cursos/cejas-perfectas.png',
     created_at: '2024-01-01',
   },
   {
@@ -285,6 +299,7 @@ export const COURSES: Course[] = [
     ],
     notes: 'Práctica full en modelos reales con productos profesionales',
     active: true,
+    image_url: '/images/cursos/lifting-tecnica-coreana.png',
     created_at: '2024-01-01',
   },
   {
@@ -304,6 +319,7 @@ export const COURSES: Course[] = [
     ],
     notes: 'Práctica full en modelos reales con productos profesionales',
     active: true,
+    image_url: '/images/cursos/cejas-lifting-coreana.png',
     created_at: '2024-01-01',
   },
 ]

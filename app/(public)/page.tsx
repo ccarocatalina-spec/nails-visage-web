@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 import { ArrowRight, MapPin, Phone, Star, Award, Users, Calendar, Wifi } from 'lucide-react'
 
@@ -42,19 +43,19 @@ const marqueeItems = ['Esmaltado Semipermanente', 'Polygel', 'Acrílico', 'Soft 
 
 /* ─── COURSES PREVIEW ────────────────────────────── */
 const manicurePreviews = [
-  { name: 'Manicure Profesional', slug: 'manicure-profesional', price: 240000, duration: '3 días', badge: 'Más completo' },
-  { name: 'Manicure Integral', slug: 'manicure-integral', price: 180000, duration: '2 días', badge: null },
-  { name: 'Manicure Esencial', slug: 'manicure-esencial', price: 185000, duration: '2 días', badge: null },
-  { name: 'Soft Gel Inicial', slug: 'soft-gel-inicial', price: 90000, duration: '1 día', badge: null },
-  { name: 'Polygel Inicial', slug: 'polygel-inicial', price: 90000, duration: '1 día', badge: null },
-  { name: 'Acrílico Inicial', slug: 'acrilico-inicial', price: 90000, duration: '1 día', badge: null },
+  { name: 'Manicure Profesional', slug: 'manicure-profesional', price: 240000, duration: '3 días', badge: 'Más completo', image: '/images/cursos/manicure-profesional.png' },
+  { name: 'Manicure Integral', slug: 'manicure-integral', price: 180000, duration: '2 días', badge: null, image: '/images/cursos/manicure-integral.png' },
+  { name: 'Manicure Esencial', slug: 'manicure-esencial', price: 185000, duration: '2 días', badge: null, image: '/images/cursos/manicure-esencial.png' },
+  { name: 'Soft Gel Inicial', slug: 'soft-gel-inicial', price: 90000, duration: '1 día', badge: null, image: '/images/cursos/soft-gel-inicial.png' },
+  { name: 'Polygel Inicial', slug: 'polygel-inicial', price: 90000, duration: '1 día', badge: null, image: '/images/cursos/polygel-inicial.png' },
+  { name: 'Acrílico Inicial', slug: 'acrilico-inicial', price: 90000, duration: '1 día', badge: null, image: '/images/cursos/acrilico-inicial.png' },
 ]
 
 const pestanasPreviews = [
-  { name: 'Integral Pestañas y Cejas', slug: 'integral-pestanas-cejas', price: 260000, duration: '3 días', badge: 'Más completo' },
-  { name: 'Extensión y Cejas', slug: 'extension-cejas', price: 185000, duration: '2 días', badge: null },
-  { name: 'Extensión de Pestañas', slug: 'extension-pestanas', price: 125000, duration: '1 día', badge: null },
-  { name: 'Cejas Perfectas', slug: 'cejas-perfectas', price: 110000, duration: '1 día', badge: null },
+  { name: 'Integral Pestañas y Cejas', slug: 'integral-pestanas-cejas', price: 260000, duration: '3 días', badge: 'Más completo', image: '/images/cursos/integral-pestanas-cejas.png' },
+  { name: 'Extensión y Cejas', slug: 'extension-cejas', price: 185000, duration: '2 días', badge: null, image: '/images/cursos/extension-cejas.png' },
+  { name: 'Extensión de Pestañas', slug: 'extension-pestanas', price: 125000, duration: '1 día', badge: null, image: '/images/cursos/extension-pestanas.png' },
+  { name: 'Cejas Perfectas', slug: 'cejas-perfectas', price: 110000, duration: '1 día', badge: null, image: '/images/cursos/cejas-perfectas.png' },
 ]
 
 function CLP(n: number) {
@@ -76,9 +77,21 @@ export default function HomePage() {
     <>
       {/* ─── HERO ──────────────────────────────────── */}
       <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: '5rem 1.5rem 4rem' }}>
+        {/* Foto de fondo difuminada */}
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+          <Image
+            src="/images/galeria/alumnas-certificado.jpg"
+            alt=""
+            fill
+            priority
+            style={{ objectFit: 'cover', filter: 'blur(22px)', transform: 'scale(1.15)' }}
+          />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(11,11,11,0.78) 0%, rgba(11,11,11,0.6) 45%, rgba(11,11,11,0.88) 100%)' }} />
+        </div>
+
         {/* Glow orbs */}
-        <div className="glow-orb" style={{ width: 500, height: 500, top: '-10%', left: '-10%', opacity: 0.4 }} />
-        <div className="glow-orb" style={{ width: 400, height: 400, bottom: '0%', right: '-5%', opacity: 0.3 }} />
+        <div className="glow-orb" style={{ width: 500, height: 500, top: '-10%', left: '-10%', opacity: 0.5 }} />
+        <div className="glow-orb" style={{ width: 400, height: 400, bottom: '0%', right: '-5%', opacity: 0.4 }} />
 
         {/* Grid overlay */}
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)', backgroundSize: '64px 64px', opacity: 0.35, pointerEvents: 'none' }} />
@@ -161,9 +174,13 @@ export default function HomePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.25rem' }}>
             {manicurePreviews.map((c, i) => (
               <Link key={c.slug} href={`/cursos/${c.slug}`} className="card reveal" style={{ transitionDelay: `${i * 0.07}s`, padding: '1.5rem', display: 'block' }}>
-                {/* Image placeholder */}
+                {/* Image */}
                 <div style={{ height: 180, background: 'var(--bg-card-2)', borderRadius: '0.5rem', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--border)', overflow: 'hidden', position: 'relative' }}>
-                  <span style={{ color: 'var(--muted-2)', fontSize: '0.75rem' }}>Imagen del curso</span>
+                  {c.image ? (
+                    <Image src={c.image} alt={c.name} fill style={{ objectFit: 'cover' }} sizes="(max-width: 640px) 100vw, 300px" />
+                  ) : (
+                    <span style={{ color: 'var(--muted-2)', fontSize: '0.75rem' }}>Imagen del curso</span>
+                  )}
                   {c.badge && (
                     <span className="tag" style={{ position: 'absolute', top: 10, left: 10, fontSize: '0.65rem' }}>{c.badge}</span>
                   )}
@@ -201,7 +218,11 @@ export default function HomePage() {
             {pestanasPreviews.map((c, i) => (
               <Link key={c.slug} href={`/cursos/${c.slug}`} className="card reveal" style={{ transitionDelay: `${i * 0.07}s`, padding: '1.5rem', display: 'block' }}>
                 <div style={{ height: 180, background: 'var(--bg-card-2)', borderRadius: '0.5rem', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--border)', overflow: 'hidden', position: 'relative' }}>
-                  <span style={{ color: 'var(--muted-2)', fontSize: '0.75rem' }}>Imagen del curso</span>
+                  {c.image ? (
+                    <Image src={c.image} alt={c.name} fill style={{ objectFit: 'cover' }} sizes="(max-width: 640px) 100vw, 300px" />
+                  ) : (
+                    <span style={{ color: 'var(--muted-2)', fontSize: '0.75rem' }}>Imagen del curso</span>
+                  )}
                   {c.badge && (
                     <span className="tag" style={{ position: 'absolute', top: 10, left: 10, fontSize: '0.65rem' }}>{c.badge}</span>
                   )}
@@ -215,6 +236,34 @@ export default function HomePage() {
                   </span>
                 </div>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── GALERÍA DE TRABAJOS ────────────────────── */}
+      <section style={{ padding: '6rem 1.5rem', background: 'var(--bg-2)' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div className="reveal" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div className="tag" style={{ marginBottom: '1rem', margin: '0 auto 1rem' }}>Nuestro trabajo</div>
+            <h2 className="heading" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
+              Resultados de <span style={{ color: 'var(--rosa)' }}>nuestras alumnas</span>
+            </h2>
+          </div>
+
+          <div style={{ display: 'grid', gridAutoRows: '160px', gridAutoFlow: 'dense', gap: '1rem' }} className="gallery-grid">
+            {[
+              { src: '/images/galeria/alumnas-certificado.jpg', alt: 'Alumnas con su certificado de Nails Visage', span: 1 },
+              { src: '/images/galeria/resultado-manicure-1.jpg', alt: 'Manicure semipermanente con degradé', span: 1 },
+              { src: '/images/galeria/resultado-pestanas-1.jpg', alt: 'Resultado de lash lifting', span: 2 },
+              { src: '/images/galeria/resultado-manicure-3.jpg', alt: 'Uñas acrílicas con glitter', span: 2 },
+              { src: '/images/galeria/alumnas-practica.jpg', alt: 'Alumnas practicando en clase', span: 1 },
+              { src: '/images/galeria/resultado-manicure-4.jpg', alt: 'Manicure francesa natural', span: 2 },
+              { src: '/images/galeria/resultado-manicure-2.jpg', alt: 'Manicure con diseño y pedrería', span: 1 },
+            ].map((img, i) => (
+              <div key={i} className="reveal" style={{ position: 'relative', gridRow: `span ${img.span}`, borderRadius: '0.75rem', overflow: 'hidden', border: '1px solid var(--border)', transitionDelay: `${i * 0.05}s` }}>
+                <Image src={img.src} alt={img.alt} fill style={{ objectFit: 'cover' }} sizes="(max-width: 640px) 50vw, 25vw" />
+              </div>
             ))}
           </div>
         </div>

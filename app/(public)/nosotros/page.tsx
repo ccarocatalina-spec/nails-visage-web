@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Award, Heart, Target } from 'lucide-react'
 
 export const metadata = {
@@ -20,6 +21,18 @@ export default function NosotrosPage() {
           <p style={{ color: 'var(--muted)', fontSize: '1.05rem', lineHeight: 1.7 }}>
             En Academia Nails Visage no solo enseñamos técnicas — impulsamos el crecimiento personal y profesional de cada alumna.
           </p>
+        </div>
+      </section>
+
+      {/* Fotos de la academia */}
+      <section style={{ padding: '0 1.5rem 4rem' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
+          <div style={{ position: 'relative', height: 340, borderRadius: '1.25rem', overflow: 'hidden', border: '1px solid var(--border)' }}>
+            <Image src="/images/galeria/alumnas-practica.jpg" alt="Alumnas practicando en clase" fill style={{ objectFit: 'cover' }} sizes="(max-width: 640px) 100vw, 450px" />
+          </div>
+          <div style={{ position: 'relative', height: 340, borderRadius: '1.25rem', overflow: 'hidden', border: '1px solid var(--border)' }}>
+            <Image src="/images/galeria/alumnas-certificado.jpg" alt="Alumnas con su certificado de Nails Visage" fill style={{ objectFit: 'cover' }} sizes="(max-width: 640px) 100vw, 450px" />
+          </div>
         </div>
       </section>
 

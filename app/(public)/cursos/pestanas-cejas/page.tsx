@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Clock, CheckCircle } from 'lucide-react'
 import { getCoursesByCategory } from '@/lib/courses-data'
 
@@ -46,8 +47,14 @@ export default function PestanasCejasPage() {
                 className="course-card"
                 style={{ display: 'block', background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '1rem', overflow: 'hidden' }}>
 
-                <div style={{ height: 200, background: 'var(--bg-card-2)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid var(--border)', position: 'relative' }}>
-                  <span style={{ color: 'var(--muted-2)', fontSize: '0.75rem' }}>Imagen del curso</span>
+                <div style={{ height: 200, background: 'var(--bg-card-2)', borderBottom: '1px solid var(--border)', position: 'relative' }}>
+                  {course.image_url ? (
+                    <Image src={course.image_url} alt={course.name} fill style={{ objectFit: 'cover' }} sizes="(max-width: 640px) 100vw, 320px" />
+                  ) : (
+                    <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <span style={{ color: 'var(--muted-2)', fontSize: '0.75rem' }}>Imagen del curso</span>
+                    </div>
+                  )}
                   {course.notes && (
                     <span className="tag" style={{ position: 'absolute', bottom: 10, left: 10, fontSize: '0.65rem' }}>
                       {course.notes}

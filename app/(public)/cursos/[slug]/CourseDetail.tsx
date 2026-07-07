@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Clock, CheckCircle, ChevronDown, ArrowLeft, Calendar, Users } from 'lucide-react'
 import type { Course, Session } from '@/lib/types'
 
@@ -69,9 +70,15 @@ export default function CourseDetail({ course }: { course: Course }) {
 
         {/* ─── LEFT COLUMN ─────────────────────────────── */}
         <div>
-          {/* Image placeholder */}
-          <div style={{ height: 320, background: 'var(--bg-card)', borderRadius: '1rem', border: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2.5rem' }}>
-            <span style={{ color: 'var(--muted-2)', fontSize: '0.875rem' }}>Imagen del curso</span>
+          {/* Image */}
+          <div style={{ height: 320, position: 'relative', background: 'var(--bg-card)', borderRadius: '1rem', border: '1px solid var(--border)', overflow: 'hidden', marginBottom: '2.5rem' }}>
+            {course.image_url ? (
+              <Image src={course.image_url} alt={course.name} fill style={{ objectFit: 'cover' }} sizes="(max-width: 900px) 100vw, 700px" priority />
+            ) : (
+              <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span style={{ color: 'var(--muted-2)', fontSize: '0.875rem' }}>Imagen del curso</span>
+              </div>
+            )}
           </div>
 
           {/* Course name + duration */}
