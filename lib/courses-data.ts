@@ -273,9 +273,7 @@ export const COURSES: Course[] = [
     includes: ['Certificado', 'Materiales profesionales en clases', 'Manual de apoyo impreso', 'Lista de insumos con descuento en tiendas', 'Asesoría post curso', 'Snack'],
     temario: [
       { title: 'Teoría, anatomía y bioseguridad', bullets: ['Anatomía de las cejas', 'Bioseguridad', 'Marcas del mercado', 'Manejo de materiales profesionales'] },
-      { title: 'Técnicas y efectos', bullets: ['Técnicas: clásica, volumen, rímel', 'Efectos: closed fans, máscara, f. tecnológicas'] },
-      { title: 'Diseño de mirada', bullets: ['Personalización', 'Mapeo de estructuras comerciales', 'Efecto ojo de gato, muñeca y ardilla'] },
-      { title: 'Práctica avanzada', bullets: ['Direccionamiento y mapping', 'Uso y aplicación de adhesivo', 'Retoque y retiro', 'Correcto empalme'] },
+      { title: 'Diseño de cejas perfectas', bullets: ['Visagismo (brow mapping)', 'Epilación con hilo y cera', 'Laminado (brow lamination)', 'Técnica ombré y pigmentación (henna y refectocil)'] },
     ],
     notes: 'Práctica full en modelos reales y maniquí',
     active: true,
